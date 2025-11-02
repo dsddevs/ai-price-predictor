@@ -1,0 +1,41 @@
+# Web Framework
+fastapi>=0.110,<1.0
+uvicorn[standard]>=0.38.0
+
+# Data Validation
+pydantic>=2.6,<3.0
+pydantic-settings~=2.11.0
+email-validator>=2.0.0
+
+# HTTP Client
+requests>=2.31,<3.0
+
+# Financial Data
+yfinance>=0.2.40,<0.3
+polygon-api-client==1.16.3
+
+# Data Processing
+pandas>=2.0,<3.0
+numpy>=1.24,<3.0
+
+# Configuration
+python-dotenv>=1.0,<2.0
+
+# Security
+python-jose[cryptography]>=3.3.0
+passlib[bcrypt]>=1.7.4
+bcrypt>=4.0.0,<5.0.0
+python-multipart>=0.0.6
+
+# Monitoring
+psutil>=5.9.0
+prometheus-client>=0.17.0
+
+# Database
+sqlalchemy>=2.0.0
+alembic>=1.11.0
+asyncpg>=0.28.0
+
+# Caching
+redis>=4.6.0
+aioredis>=2.0.1

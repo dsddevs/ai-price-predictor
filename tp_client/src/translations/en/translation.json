@@ -1,0 +1,20 @@
+{
+  "stats": {
+    "header": "FORECAST PRICE STATISTICS",
+    "default": "No forecast data available",
+    "period": "Period",
+    "aPrice": "Actual prices",
+    "fPrice": "Future prices",
+    "diff": "Difference",
+    "day": "days",
+    "fToggle": "OFF/ON",
+    "pToggle": "DIFF:"
+  },
+  "news" : {
+    "header": "News"
+  },
+  "dd": {
+    "start": "Start:",
+    "end": "End:"
+  }
+}

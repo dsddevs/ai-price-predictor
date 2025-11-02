@@ -1,0 +1,126 @@
+# ============================================
+# PROJECT METADATA (optional)
+# ============================================
+[project]
+name = "trade-price-predictor"
+version = "0.1.0"
+description = "Trading price prediction service"
+requires-python = ">=3.11"
+authors = [
+    {name = "Your Name", email = "your.email@example.com"}
+]
+
+# ============================================
+# BLACK - Code Formatting
+# ============================================
+[tool.black]
+line-length = 88                    # Maximum line length
+target-version = ['py311']          # Target Python version
+include = '\.pyi?$'                 # Files to format
+extend-exclude = '''
+/(
+  # Exclusions
+  \.git
+  | \.mypy_cache
+  | \.pytest_cache
+  | \.venv
+  | build
+  | dist
+)/
+'''
+
+# ============================================
+# ISORT - Import Sorting
+# ============================================
+[tool.isort]
+profile = "black"                   # Black compatibility
+line_length = 88                    # Same length as black
+multi_line_output = 3               # Multi-line import style
+include_trailing_comma = true       # Trailing comma
+force_grid_wrap = 0
+use_parentheses = true
+ensure_newline_before_comments = true
+skip_glob = ["*/migrations/*"]      # Skip migrations
+
+# ============================================
+# MYPY - Type Checking
+# ============================================
+[tool.mypy]
+python_version = "3.11"             # Python version
+warn_return_any = true              # Warn about returning Any
+warn_unused_configs = true          # Warn about unused configs
+disallow_untyped_defs = false       # Allow untyped functions (for now)
+ignore_missing_imports = true       # Ignore missing imports
+strict_optional = true              # Strict Optional checking
+warn_redundant_casts = true         # Warn about redundant casts
+warn_unused_ignores = true          # Warn about unused # type: ignore
+
+# Overrides for specific modules
+[[tool.mypy.overrides]]
+module = "tests.*"
+ignore_errors = true
+
+# ============================================
+# PYTEST - Testing
+# ============================================
+[tool.pytest.ini_options]
+minversion = "7.0"
+testpaths = ["tests"]               # Where to look for tests
+python_files = ["test_*.py"]        # Test file pattern
+python_classes = ["Test*"]          # Test class pattern
+python_functions = ["test_*"]       # Test function pattern
+addopts = [
+    "-v",                           # Verbose output
+    "--strict-markers",             # Strict marker checking
+    "--tb=short",                   # Short traceback
+    "--cov=tp_server",              # Code coverage
+    "--cov-report=term-missing",    # Show uncovered lines
+    "--cov-report=html",            # HTML report
+    "--cov-report=xml",             # XML report (for CI)
+]
+markers = [
+    "slow: marks tests as slow",
+    "integration: marks tests as integration tests",
+    "unit: marks tests as unit tests",
+]
+
+# ============================================
+# COVERAGE - Code Coverage
+# ============================================
+[tool.coverage.run]
+source = ["tp_server"]              # Code to measure
+omit = [
+    "*/tests/*",                    # Exclude tests
+    "*/migrations/*",               # Exclude migrations
+    "*/__pycache__/*",
+    "*/venv/*",
+    "*/.venv/*",
+]
+
+[tool.coverage.report]
+precision = 2                       # Percentage precision
+show_missing = true                 # Show uncovered lines
+skip_covered = false                # Don't skip covered files
+exclude_lines = [
+    "pragma: no cover",
+    "def __repr__",
+    "raise AssertionError",
+    "raise NotImplementedError",
+    "if __name__ == .__main__.:",
+    "if TYPE_CHECKING:",
+    "class .*\\bProtocol\\):",
+    "@(abc\\.)?abstractmethod",
+]
+
+# ============================================
+# FLAKE8 - Linting (in setup.cfg or .flake8)
+# ============================================
+# Note: flake8 doesn't support pyproject.toml
+# Use setup.cfg or .flake8
+
+# ============================================
+# BANDIT - Security Checking
+# ============================================
+[tool.bandit]
+exclude_dirs = ["/tests", "/migrations"]
+skips = ["B101", "B601"]            # Skip specific checks
