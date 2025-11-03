@@ -33,8 +33,8 @@ A professional trading analytics platform that provides real-time market data, p
 
 ### Clone the repository
 ```bash
-git clone https://github.com/dsddevs/trade_price_predictor.git
-cd trade_price_predictor
+git clone https://github.com/dsddevs/AI-PricePredictor.git
+cd AI-PricePredictor
 ```
 
 ### Backend Setup
