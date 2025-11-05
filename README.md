@@ -135,7 +135,7 @@ pytest --cov=. --cov-report=html
 
 ## <img src="./docs/images/icon.png" width="24" align="top"> Project Structure
 ```
-trade_price_predictor/
+AI-PricePredictor/
 ├── tp_client/              # React frontend
 │   ├── src/
 │   │   ├── components/     # React components
