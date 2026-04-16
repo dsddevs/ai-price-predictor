@@ -189,8 +189,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## <img src="./docs/images/icon.png" width="24" align="top"> Contact
 
-- 📧 dsddevs@gmail.com
-- <img src="./docs/images/telegram.png" width="24" valign="middle"> @dsddevs / +998906006989
+- GMAIL:  dsddevs@gmail.com
+- PHONE NUMBER: +998(90)600-69-89
+- TELEGRAM: @dsddevs
 
 ## <img src="./docs/images/icon.png" width="24" align="top"> Status
 
